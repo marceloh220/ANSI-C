@@ -3,6 +3,8 @@
 Marcelo H Moraes
 marceloh220@hotmail.com
 
+avr-gcc (gcc version 6.3.0)
+
 MCU: atmega328
 Clock: internal RC 8MHz
 
