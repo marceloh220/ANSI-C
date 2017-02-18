@@ -1,3 +1,12 @@
+/*
+	Marcelo H Moraes
+	marceloh220@hotmail.com
+	MCU: AT89S51
+	Clock: 12MHz/12 (1us machine cycle)
+	Compiler: SDCC (3.6.0 Linux)
+	Just display in device IHM_lcd595.
+*/
+
 #include <at89x51.h>
 //Altere os pinos conforme necessario
     #define _clock             (P3_0=1)
