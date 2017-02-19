@@ -7,9 +7,9 @@ MCU: attiny45
 Clock: internal RC 8MHz
 
 Fuses:	low = 0x62		(8MHz internal RC, slow rise 62ms)
-		high = 0xde	(BOD 2.7V, take care with bits RSTDISBL and SPIEN)
-		extend = 0xff	(i don't know what self-programming is, let then quiet)	
-		(i don't care about lock bits)
+	high = 0xde	(BOD 2.7V, take care with bits RSTDISBL and SPIEN)
+	extend = 0xff	(i don't know what self-programming is, let then quiet)	
+	(i don't care about lock bits)
 
 Measure distance with ultrason HC-SR04.
 Yep, with a simple DIP-8 mcu attiny45 using 5 pins.
