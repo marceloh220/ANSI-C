@@ -1,3 +1,10 @@
+/*
+ * Marcelo H Moraes
+ * marceloh220@hotmai.com
+ * 
+ * ADC library for atmega328/p
+ */
+
 #ifndef ADC_H_INCLUDED
 #define ADC_H_INCLUDED
 #endif
@@ -5,6 +12,24 @@
 #include <avr/interrupt.h>
 
 void adc_init(char Vref, char prescale)    {
+    
+    //For Vref
+	// 0 = Vref in pin Aref
+    // 1 = Vref is the same of AVcc
+    // 2 = No configuration, using 1
+    // 3 = Vref int mcu of 1.1V
+    
+    
+    //For prescale
+    // 0 = 1/2
+	// 1 = 1/2
+	// 2 = 1/4
+	// 3 = 1/8
+	// 4 = 1/16
+	// 5 = 1/32
+	// 6 = 1/64
+	// 7 = 1/128
+    
     cli();
     if(Vref > 3 || Vref == 2) Vref = 1;
     ADMUX = 0;
