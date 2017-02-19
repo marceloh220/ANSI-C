@@ -7,7 +7,7 @@ MCU: attiny45
 Clock: internal RC 8MHz
 
 Fuses:	low = 0x62		(8MHz internal RC, slow rise 62ms)
-		high = 0xde		(BOD 2.7V, take care with bits RSTDISBL and SPIEN)
+		high = 0xde	(BOD 2.7V, take care with bits RSTDISBL and SPIEN)
 		extend = 0xff	(i don't know what self-programming is, let then quiet)	
 		(i don't care about lock bits)
 
@@ -37,11 +37,11 @@ Enable:	PB0
 #define _Ndata			(PORTB&=~(1<<1))
 #define _enable			(PORTB|=(1<<0))
 #define _Nenable		(PORTB&=~(1<<0))
-#define _directclock	(DDRB|=(1<<4))
+#define _directclock		(DDRB|=(1<<4))
 #define _directdata		(DDRB|=(1<<1))
-#define _directenable	(DDRB|=(1<<0))
+#define _directenable		(DDRB|=(1<<0))
 #define __delay			_delay_us(40)
-#define __delay_send	_delay_us(1)
+#define __delay_send		_delay_us(1)
 #include "IHM_lcd595.h"
 
 uint8_t	ovf_capture;
