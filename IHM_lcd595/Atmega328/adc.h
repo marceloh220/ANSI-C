@@ -51,6 +51,6 @@ int adc_read(char pin)                     {
 
                                            }
 
-void acd_digital(char pin)                 {
+void acd_digital(char pin)                 { //turn the pin digital again
     DIDR0 &= ~(1<<pin);
                                            }
