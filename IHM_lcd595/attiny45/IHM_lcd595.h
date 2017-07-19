@@ -287,11 +287,11 @@ Mapeamento do dispositivo adicione no inicio do codigo
 	_directenable;						  /*Define pino de enable como saida*/
 #endif
 
-	lcd_d_c(0x30,comando);
+	lcd_d_c(0x03,comando);
 	___delay_init();
-	lcd_d_c(0x30,comando);
+	lcd_d_c(0x03,comando);
 	___delay_init();
-	lcd_d_c(0x30,comando);				  /*Tres tentativas para resolver bugs*/
+	lcd_d_c(0x03,comando);				  /*Tres tentativas para resolver bugs*/
 	___delay_init();
 	
     lcd_d_c(0x02,comando);                /*Envia comando para colocar lcd em modo de 4bits*/
