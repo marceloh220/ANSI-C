@@ -25,23 +25,11 @@ Enable:	PB0
 
 */
 
-
+#define F_CPU	8000000UL
 #include <avr/io.h>
 #include <util/delay.h>
 #include <stdint.h>
 #include <avr/interrupt.h>
-
-#define _clock			(PORTB|=(1<<4))
-#define _Nclock			(PORTB&=~(1<<4))
-#define _data			(PORTB|=(1<<1))
-#define _Ndata			(PORTB&=~(1<<1))
-#define _enable			(PORTB|=(1<<0))
-#define _Nenable		(PORTB&=~(1<<0))
-#define _directclock		(DDRB|=(1<<4))
-#define _directdata		(DDRB|=(1<<1))
-#define _directenable		(DDRB|=(1<<0))
-#define __delay			_delay_us(40)
-#define __delay_send		_delay_us(1)
 #include "IHM_lcd595.h"
 
 uint8_t	ovf_capture;
@@ -82,7 +70,7 @@ float measure_distance() {
 
 int main() {		
 	lcd_begin();
-	lcd_background(on);
+	lcd_backlight(on);
 	lcd_set(0,0);
 	lcd_printS("Distance");
 

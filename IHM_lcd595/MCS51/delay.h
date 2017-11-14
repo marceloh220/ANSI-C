@@ -42,6 +42,7 @@ You have been warned!
 void _delay_ms(int ms) {
 	TR0 = 0;
 	TF0 = 0;
+	TMOD |= 1;
 	while(ms) {
 		TL0 = 0x18;
 		TH0 = 0xFC;

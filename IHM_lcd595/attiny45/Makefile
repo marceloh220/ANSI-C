@@ -6,13 +6,13 @@ compiler = avr-gcc
 hexgenerator = avr-objcopy
 
 #options of code source
-flags = -Os -g2 -gdwarf-2 -Wall -v
-mcu = attiny45
-clock = 8000000UL
-source = main
+flags = -Os -g2 -gdwarf-2
+mcu = attiny85
+app	= lcd_test
 
 
 all:
-	$(compiler) $(flags) -mmcu=$(mcu) -DF_CPU=$(clock) $(source).c -o $(source).elf
-	$(hexgenerator) -O ihex $(source).elf $(source).hex
-	avr-size -C  -x --mcu=$(mcu) $(source).elf
+	$(compiler) $(flags) -mmcu=$(mcu) -c *.c
+	$(compiler) $(flags) -mmcu=$(mcu) *.o -o $(app).elf
+	$(hexgenerator) -O ihex $(app).elf $(app).hex
+	avr-size -C  -x --mcu=$(mcu) $(app).elf
